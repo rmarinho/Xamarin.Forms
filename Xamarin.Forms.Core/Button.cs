@@ -349,7 +349,7 @@ namespace Xamarin.Forms
 		bool IImageElement.IsAnimationAutoPlay => false;
 
 		void IImageElement.OnImageSourceSourceChanged(object sender, EventArgs e) =>
-			ImageElement.ImageSourcesSourceChanged(this, e);
+			ImageElement.ImageSourceSourceChanged(this, e);
 
 		void IButtonElement.OnCommandCanExecuteChanged(object sender, EventArgs e) =>
 			ButtonElement.CommandCanExecuteChanged(this, EventArgs.Empty);
