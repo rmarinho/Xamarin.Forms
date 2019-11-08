@@ -18,8 +18,8 @@ namespace Xamarin.Forms.Controls.Issues
 	{
 		public Issue8417()
 		{
-#if APP	
-   			Device.SetFlags(new List<string> { ExperimentalFlags.CarouselViewExperimental });
+#if APP
+			Device.SetFlags(new List<string> { ExperimentalFlags.CarouselViewExperimental });
 			InitializeComponent();
 			BindingContext = new Issue8417ViewModel();
 #endif
@@ -35,8 +35,9 @@ namespace Xamarin.Forms.Controls.Issues
 			base.OnAppearing();
 
 			await Task.Delay(2000);
-
+#if APP
 			carouselView.ItemsSource = (BindingContext as Issue8417ViewModel).Items;
+#endif
 		}
 	}
 
@@ -87,8 +88,8 @@ namespace Xamarin.Forms.Controls.Issues
 				Location = "Central and East Africa",
 				Details = "The blue monkey or diademed monkey is a species of Old World monkey native to Central and East Africa, ranging from the upper Congo River basin east to the East African Rift and south to northern Angola and Zambia",
 				ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
-			});  
-				
+			});
+
 			Items = new ObservableCollection<Issue8417Model>(_items);
 		}
 	}
